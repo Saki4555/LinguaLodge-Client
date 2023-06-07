@@ -3,10 +3,16 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+   
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'kanit': ['Kanit', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif']
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 
