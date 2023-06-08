@@ -5,3 +5,11 @@
 .nav-text{
     @apply text-[#8ecfcb]
 }
+
+.bg-1{
+   @apply bg-[#C2DEDC]
+}
+
+.bg-2{
+    @apply bg-[#dfe8e8]
+}

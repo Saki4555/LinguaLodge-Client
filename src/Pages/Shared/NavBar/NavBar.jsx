@@ -20,7 +20,7 @@ const NavBar = () => {
         };
     }, []);
     const navOptions = <>
-        <li className="font-bold text-lg"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
+        <li className="font-semibold text-lg"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
         <li><a>Item 3</a></li>
 
     </>;

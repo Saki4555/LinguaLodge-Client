@@ -18,9 +18,7 @@ const HomeSlider = ({img}) => {
                             href="#">Get Started</a>
                     </div>
                 </div>
-                <div className="p-20 bg-[#C2DEDC]">
-                    <h1 className="text-4xl">Other Content</h1>
-                </div>
+               
                 
             </div>
     );
