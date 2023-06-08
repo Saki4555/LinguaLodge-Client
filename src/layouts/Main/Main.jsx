@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../../Pages/Shared/NavBar/NavBar";
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 const Main = () => {
     return (
         <>

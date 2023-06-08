@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import NavLogin from "../../../Components/Buttons/NavLogin";
-// import img from '../../../assets/Home/slide1.png'
+import useAuth from "../../../Hooks/useAuth";
+
 
 
 const NavBar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const{user, logOut}  = useAuth();
+    // console.log(user?.photoURL);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,6 +22,16 @@ const NavBar = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const handleLogOUt = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
     const navOptions = <>
         <li className="font-semibold text-lg"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
         <li><a>Item 3</a></li>
@@ -50,28 +63,32 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <NavLogin></NavLogin>
-
-                {/* <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-16 rounded-full">
-                                <img src={img} />
-                               
-                                
-                            </div>
+                {
+                    user?.email ? <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-16 rounded-full">
+                            <img src={user?.photoURL} />
                            
-                        </label>
-                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </div> */}
+                            
+                        </div>
+                       
+                    </label>
+                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                        <li className="hidden">
+                            <a className="justify-between">
+                                Profile
+                                <span className="badge">New</span>
+                            </a>
+                        </li>
+                        <li className="hidden"><a>Settings</a></li>
+                        <button onClick={handleLogOUt} className="btn">Logout</button>
+                    </ul>
+                </div>
+                :  <NavLogin></NavLogin>
+                }
+               
+
+                
             </div>
         </div>
 

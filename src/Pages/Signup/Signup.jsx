@@ -4,43 +4,44 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import SocailLogin from "../Shared/SocailLogin/SocailLogin";
 
 
 
 const Signup = () => {
 
-    const { register, handleSubmit, watch,reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useAuth();
 
     const navigate = useNavigate();
     const [visible, setVisible] = useState(false);
 
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         createUser(data.email, data.password)
-        .then(result => {
-            
-            const user = result.user;
-            console.log(user);
-            updateUserProfile(data.name, data.PhotoUrl)
             .then(() => {
-                reset();
-                toast.success('Singed up successfully', {
-                    duration: 3000,
-                    style: {
-                      background: '#E3F4F4',
-                      fontWeight: '700'
-                    },
-                  });
-                  navigate('/');
+
+                // const user = result.user;
+                // console.log(user);
+                updateUserProfile(data.name, data.PhotoUrl)
+                    .then(() => {
+                        reset();
+                        toast.success('Singed up successfully', {
+                            duration: 3000,
+                            style: {
+                                background: '#E3F4F4',
+                                fontWeight: '700'
+                            },
+                        });
+                        navigate('/');
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
             })
-            .catch(error => {
-                console.log(error);
-            })
-        })
-        .catch((error) => {
-           console.log(error.message);
-          });
+            .catch((error) => {
+                console.log(error.message);
+            });
     };
 
     const validatePassword = (value) => {
@@ -57,16 +58,8 @@ const Signup = () => {
     return (
         <div className="pt-20 font-kanit">
             <div className="w-full px-2 lg:p-0 lg:w-96 mx-auto border-4 rounded-lg">
-                <div className="pt-7 pb-4 text-center">
-                    <button className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
- hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
-                        <div className="flex items-center justify-center gap-10 pr-10">
-                            <img src="https://tailus.io/sources/blocks/social/preview/images/google.svg" className=" w-5" alt="google logo" />
-                            <p className="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Continue with Google</p>
-                        </div>
-                    </button>
-                </div>
 
+                <SocailLogin></SocailLogin>
                 <div className="divider px-3">OR</div>
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-white bg-opacity-75 shadow-lg">
                     <div className="px-8 pt-6 pb-4">
@@ -116,15 +109,15 @@ const Signup = () => {
 
                                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-lg "
                                     id="password"
-                                    type={ visible? "text" : "password"}
+                                    type={visible ? "text" : "password"}
                                     placeholder="Enter your password"
 
                                 />
                                 <div onClick={showPassword} type="button" className="flex items-center">
 
-                                   {
-                                    visible ?  <FaEyeSlash className="-ml-7 w-6 h-6 text-gray-500"></FaEyeSlash> :  <FaEye className="-ml-7 w-6 h-6 text-gray-500"></FaEye>
-                                   }
+                                    {
+                                        visible ? <FaEyeSlash className="-ml-7 w-6 h-6 text-gray-500"></FaEyeSlash> : <FaEye className="-ml-7 w-6 h-6 text-gray-500"></FaEye>
+                                    }
                                 </div>
                             </div>
                             {errors.password?.type === 'required' && <p className="text-red-500">Password is requied</p>}
