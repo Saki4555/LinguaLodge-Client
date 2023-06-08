@@ -1,0 +1,102 @@
+[
+    {
+        "_id": "1",
+        "name": "Beginner Spanish",
+        "image": "https://i.ibb.co/PwG40NB/spanish.png",
+        "rating": 4.5,
+        "instructor_name": "Maria Lopez",
+        "instructor_email": "maria@example.com",
+        "seat": 30,
+        "price": 29.99
+    },
+    {
+        "_id": "2",
+        "name": "Intermediate French",
+        "image": "https://i.ibb.co/wJHgGp5/french.png",
+        "rating": 4.2,
+        "instructor_name": "Jean Baptiste",
+        "instructor_email": "jean@example.com",
+        "seat": 25,
+        "price": 39.99
+    },
+    {
+        "_id": "3",
+        "name": "Advanced German",
+        "image": "https://i.ibb.co/ftpv7Mv/german.png",
+        "rating": 4.8,
+        "instructor_name": "Hans Müller",
+        "instructor_email": "hans@example.com",
+        "seat": 20,
+        "price": 49.99
+    },
+    {
+        "_id": "4",
+        "name": "Beginner Italian",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.3,
+        "instructor_name": "Giulia Rossi",
+        "instructor_email": "giulia@example.com",
+        "seat": 35,
+        "price": 34.99
+    },
+    {
+        "_id": "5",
+        "name": "Business English",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.6,
+        "instructor_name": "John Smith",
+        "instructor_email": "john@example.com",
+        "seat": 15,
+        "price": 59.99
+    },
+    {
+        "_id": "6",
+        "name": "Beginner Mandarin",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.1,
+        "instructor_name": "Li Wei",
+        "instructor_email": "li@example.com",
+        "seat": 40,
+        "price": 24.99
+    },
+    {
+        "_id": "7",
+        "name": "Intermediate Japanese",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.4,
+        "instructor_name": "Yuki Tanaka",
+        "instructor_email": "yuki@example.com",
+        "seat": 25,
+        "price": 39.99
+    },
+    {
+        "_id": "8",
+        "name": "Advanced Portuguese",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.7,
+        "instructor_name": "Ana Silva",
+        "instructor_email": "ana@example.com",
+        "seat": 20,
+        "price": 49.99
+    },
+    {
+        "_id": "9",
+        "name": "Beginner Russian",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.2,
+        "instructor-name": "Dmitri Ivanov",
+        "instructor-email": "dmitri@example.com",
+        "seat": 30,
+        "price": 29.99
+    },
+    {
+        "_id": "10",
+        "name": "Intermediate Arabic",
+        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
+        "rating": 4.5,
+        "instructor-name": "Mohammed Ahmed",
+        "instructor-email": "mohammed@example.com",
+        "seat": 35,
+        "price": 34.99
+    }
+]

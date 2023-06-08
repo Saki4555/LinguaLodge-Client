@@ -33,8 +33,8 @@ const NavBar = () => {
             })
     }
     const navOptions = <>
-        <li className="font-semibold text-lg"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
-        <li><a>Item 3</a></li>
+        <li className="font-semibold text-lg tracking-wide"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
+        <li className="font-semibold text-lg tracking-wide"><NavLink to="/classes" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Classes</NavLink></li>
 
     </>;
     return (
@@ -73,7 +73,7 @@ const NavBar = () => {
                         </div>
                        
                     </label>
-                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="mt-3 p-4 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                         <li className="hidden">
                             <a className="justify-between">
                                 Profile
@@ -81,7 +81,7 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li className="hidden"><a>Settings</a></li>
-                        <button onClick={handleLogOUt} className="btn">Logout</button>
+                        <button onClick={handleLogOUt} className="btn btn-md">Logout</button>
                     </ul>
                 </div>
                 :  <NavLogin></NavLogin>

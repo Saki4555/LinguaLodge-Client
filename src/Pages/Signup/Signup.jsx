@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash, } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import SocailLogin from "../Shared/SocailLogin/SocailLogin";
-
+// import axios from 'axios';
 
 
 const Signup = () => {
@@ -25,15 +25,48 @@ const Signup = () => {
                 // console.log(user);
                 updateUserProfile(data.name, data.PhotoUrl)
                     .then(() => {
-                        reset();
-                        toast.success('Singed up successfully', {
-                            duration: 3000,
-                            style: {
-                                background: '#E3F4F4',
-                                fontWeight: '700'
+                        const savedUser = { name: data.name, email: data.email };
+                        // axios.post('http://localhost:5000/users', {
+                        //     savedUser
+                        // })
+                        //     .then(res => {
+                        //         console.log(res.data);
+                        //         if (res.data.insertedId) {
+                        //             reset();
+                        //             toast.success('Singed up successfully', {
+                        //                 duration: 3000,
+                        //                 style: {
+                        //                     background: '#E3F4F4',
+                        //                     fontWeight: '700'
+                        //                 },
+                        //             });
+                        //             navigate('/');
+                        //         }
+                        //     })
+
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
                             },
-                        });
-                        navigate('/');
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId)
+                                    reset();
+                                    toast.success('Singed up successfully', {
+                                        duration: 3000,
+                                        style: {
+                                            background: '#E3F4F4',
+                                            fontWeight: '700'
+                                        },
+                                    });
+                                    navigate('/');
+                            })
+
+
+                        
                     })
                     .catch(error => {
                         console.log(error);
