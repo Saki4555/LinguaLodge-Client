@@ -11,6 +11,8 @@ const NavBar = () => {
     const{user, logOut}  = useAuth();
     // console.log(user?.photoURL);
 
+    
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset;
@@ -33,8 +35,8 @@ const NavBar = () => {
             })
     }
     const navOptions = <>
-        <li className="font-semibold text-lg tracking-wide"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
-        <li className="font-semibold text-lg tracking-wide"><NavLink to="/classes" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Classes</NavLink></li>
+        <li className="font-medium text-lg tracking-wider"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
+        <li className="font-medium text-lg tracking-wider"><NavLink to="/classes" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Classes</NavLink></li>
 
     </>;
     return (

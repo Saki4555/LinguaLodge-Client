@@ -1,10 +1,70 @@
-import { Rating } from '@smastrom/react-rating'
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
+import useAuth from '../../Hooks/useAuth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-import '@smastrom/react-rating/style.css'
 
 const ClassCard = ({ item }) => {
-    const { name, image, rating, instructor_name, seat, price } = item;
-    console.log(instructor_name, name);
+
+    const { name, image, rating, instructor_name, seat, price, _id } = item;
+     console.log(item.status);
+
+    const { user } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    // console.log(location);
+
+
+    const handleSelectedClass = () => {
+        if (user && user.email) {
+            const selectedClasees = {
+                selectedClassId: _id,
+                name, image, price, email: user.email,
+            }
+            fetch('http://localhost:5000/selected', {
+                method: "POST",
+                headers:{
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(selectedClasees),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        // refetch();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Selected Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        
+        else {
+            Swal.fire({
+                title: 'Are you sure?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', {
+                        state:{
+                            from:location
+                        }
+                    })
+                }
+            })
+        }
+
+    }
+
     return (
         <div className="w-full px-2 lg:p-0 lg:w-72 font-kanit hover:bg-[#eef3f2] hover:shadow-2xl overflow-hidden transition">
             <img src={image} alt="Course Image" className="w-full h-60" />
@@ -27,7 +87,7 @@ const ClassCard = ({ item }) => {
                     <p className='font-semibold tracking-wider'>Available seats: {seat}</p>
                 </div>
                 <div className="px-6 pt-8 pb-2">
-                    <button className="bg-[#59aaa4] hover:bg-[#aacdcb] hover:text-gray-800 text-white tracking-wider font-bold py-2 px-4 rounded w-full transition">
+                    <button onClick={ ()=> handleSelectedClass(item)} className="bg-[#59aaa4] hover:bg-[#aacdcb] hover:text-gray-800 text-white tracking-wider font-bold py-2 px-4 rounded w-full transition">
                         Select
                     </button>
                 </div>

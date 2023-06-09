@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocailLogin from "../Shared/SocailLogin/SocailLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
@@ -13,6 +13,12 @@ const Login = () => {
     const { signIn } = useAuth();
     const [visible, setVisible] = useState(false);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
+    // console.log(from);
+
     const onSubmit = data => {
         console.log(data);
         signIn(data.email, data.password)
@@ -25,6 +31,7 @@ const Login = () => {
                         fontWeight: '700'
                     },
                 });
+                navigate(from, {replace: true});
             })
             .catch((error) => {
                 console.log(error.message);

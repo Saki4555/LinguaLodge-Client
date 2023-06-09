@@ -1,10 +1,16 @@
 
+import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
 
 
 const SocailLogin = () => {
     const { googleSignIn } = useAuth();
+
+    
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -17,6 +23,8 @@ const SocailLogin = () => {
                   fontWeight: '700'
                 },
               });
+
+              navigate(from, {replace: true});
         })
         .catch(error => {
             console.log(error.message);

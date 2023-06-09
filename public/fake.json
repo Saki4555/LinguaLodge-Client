@@ -7,7 +7,9 @@
         "instructor_name": "Maria Lopez",
         "instructor_email": "maria@example.com",
         "seat": 30,
-        "price": 29.99
+        "price": 29.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "2",
@@ -17,7 +19,9 @@
         "instructor_name": "Jean Baptiste",
         "instructor_email": "jean@example.com",
         "seat": 25,
-        "price": 39.99
+        "price": 39.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "3",
@@ -27,7 +31,9 @@
         "instructor_name": "Hans Müller",
         "instructor_email": "hans@example.com",
         "seat": 20,
-        "price": 49.99
+        "price": 49.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "4",
@@ -37,7 +43,9 @@
         "instructor_name": "Giulia Rossi",
         "instructor_email": "giulia@example.com",
         "seat": 35,
-        "price": 34.99
+        "price": 34.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "5",
@@ -47,7 +55,9 @@
         "instructor_name": "John Smith",
         "instructor_email": "john@example.com",
         "seat": 15,
-        "price": 59.99
+        "price": 59.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "6",
@@ -57,7 +67,9 @@
         "instructor_name": "Li Wei",
         "instructor_email": "li@example.com",
         "seat": 40,
-        "price": 24.99
+        "price": 24.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "7",
@@ -67,7 +79,9 @@
         "instructor_name": "Yuki Tanaka",
         "instructor_email": "yuki@example.com",
         "seat": 25,
-        "price": 39.99
+        "price": 39.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "8",
@@ -77,26 +91,32 @@
         "instructor_name": "Ana Silva",
         "instructor_email": "ana@example.com",
         "seat": 20,
-        "price": 49.99
+        "price": 49.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "9",
         "name": "Beginner Russian",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.2,
-        "instructor-name": "Dmitri Ivanov",
-        "instructor-email": "dmitri@example.com",
+        "instructor_name": "Dmitri Ivanov",
+        "instructor_email": "dmitri@example.com",
         "seat": 30,
-        "price": 29.99
+        "price": 29.99,
+        "status": "Approved",
+        "enrolled_student": 0
     },
     {
         "_id": "10",
         "name": "Intermediate Arabic",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.5,
-        "instructor-name": "Mohammed Ahmed",
-        "instructor-email": "mohammed@example.com",
+        "instructor_name": "Mohammed Ahmed",
+        "instructor_email": "mohammed@example.com",
         "seat": 35,
-        "price": 34.99
+        "price": 34.99,
+        "status": "Approved",
+        "enrolled_student": 0
     }
 ]
