@@ -7,24 +7,40 @@ import { toast } from "react-hot-toast";
 const SocailLogin = () => {
     const { googleSignIn } = useAuth();
 
-    
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
+    console.log(from);
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(() => {
-            // console.log(result.user);
-            toast.success('Signed up successfully', {
-                duration: 3000,
-                style: {
-                  background: '#E3F4F4',
-                  fontWeight: '700'
-                },
-              });
+        .then((result) => {
+           
+            const loggedUser = result.user;
+            // console.log(loggedUser);
+            const savedUser = { name: loggedUser.displayName, email:loggedUser.email }
 
-              navigate(from, {replace: true});
+            
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(savedUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId)
+                        toast.success('Singed up successfully', {
+                            duration: 3000,
+                            style: {
+                                background: '#E3F4F4',
+                                fontWeight: '700'
+                            },
+                        });
+                        navigate(from, {replace: true});
+                })
+
         })
         .catch(error => {
             console.log(error.message);

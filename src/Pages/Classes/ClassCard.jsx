@@ -43,7 +43,7 @@ const ClassCard = ({ item }) => {
                         // })
 
                         toast.success('Selected successfully', {
-                            duration: 3000,
+                            duration: 1500,
                             style: {
                                 background: '#E3F4F4',
                                 fontWeight: '700'

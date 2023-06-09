@@ -1,15 +1,17 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import Container from "../Pages/Shared/Container";
 import { Toaster } from "react-hot-toast";
-import useAuth from "../Hooks/useAuth";
+import useUserRole from "../Hooks/useUserRole";
+import StudentSideBar from "../Pages/Dashboard/StudentDashboard/StudentSideBar";
+import InstructorSideBar from "../Pages/Dashboard/InstructorDashboard/InstructorSideBar";
 
 
 const Dashboard = () => {
 
-    const { user } = useAuth();
 
-    console.log(user?.role);
+    const [loggedUser] = useUserRole();
+    // console.log(loggedUser);
 
     return (
         <>
@@ -31,20 +33,14 @@ const Dashboard = () => {
                             {/* Sidebar content here */}
 
                             {
-                                user?.role == 'instructor' ?
-                                    <>
-                                        <li>instructor</li>
-                                    </>
-                                    : user?.role == 'admin' ?
+                                loggedUser?.role == 'instructor' ?
+                                    <InstructorSideBar></InstructorSideBar>
+                                    : loggedUser?.role == 'admin' ?
                                         <>
                                             <li>admin</li>
                                         </>
                                         :
-                                        <>
-                                            <li className="font-medium text-lg tracking-wider"><NavLink to="/dashboard/selectedclasses" className={({ isActive }) => (isActive ? 'side-text' : '')}>My Selected Classes</NavLink></li>
-
-                                            <li className="font-medium text-lg tracking-wider"><NavLink to="/" className={({ isActive }) => (isActive ? 'side-text' : '')}>My Enrolled Classes</NavLink></li>
-                                        </>
+                                        <StudentSideBar></StudentSideBar>
                             }
 
 
