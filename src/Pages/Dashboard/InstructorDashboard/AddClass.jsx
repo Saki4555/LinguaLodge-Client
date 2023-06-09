@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import useUserRole from "../../../Hooks/useUserRole";
+import { toast } from "react-hot-toast";
 
 
 const AddClass = () => {
@@ -19,6 +20,7 @@ const AddClass = () => {
 
         const formData = new FormData();
         formData.append('image', data.image[0]);
+        // console.log(formData);
 
         fetch(image_hosting_url, {
             method: 'POST',
@@ -32,24 +34,31 @@ const AddClass = () => {
             // console.log(imgURL);
 
             const { name, price,seat } = data;
-            const newclass = { name, price: parseFloat(price), instructor_name: loggedUser?.name, instructor_email: loggedUser?.email, image: imgURL, seat,enrolled_student:0, status:"Pending", rating: 4 };
+            const newclass = { name, price: parseFloat(price), instructor_name: loggedUser?.name, instructor_email: loggedUser?.email, image: imgURL, seat: parseInt(seat),enrolled_student:0, status:"Pending", rating: 4 };
             
             // console.log(newclass);
 
-            // axiosSecure.post('/menu', newItem)
-            // .then(data => {
-            //     console.log('after inserting new item', data.data);
-            //     if(data.data.insertedId){
-            //         reset();
-            //         Swal.fire({
-            //             position: 'top-end',
-            //             icon: 'success',
-            //             title: 'Item added successfully',
-            //             showConfirmButton: false,
-            //             timer: 1500
-            //           })
-            //     }
-            // })
+            fetch('http://localhost:5000/classes', {
+                method: "POST",
+                headers:{
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(newclass),
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    reset();
+
+                    toast.success('Added successfully', {
+                        duration: 1500,
+                        style: {
+                            background: '#E3F4F4',
+                            fontWeight: '700'
+                        },
+                    });
+                }
+            })
            }
         })
 

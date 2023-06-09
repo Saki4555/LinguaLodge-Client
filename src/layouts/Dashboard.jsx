@@ -33,9 +33,9 @@ const Dashboard = () => {
                             {/* Sidebar content here */}
 
                             {
-                                loggedUser?.role == 'instructor' ?
+                                loggedUser?.role === 'instructor' ?
                                     <InstructorSideBar></InstructorSideBar>
-                                    : loggedUser?.role == 'admin' ?
+                                    : loggedUser?.role === 'admin' ?
                                         <>
                                             <li>admin</li>
                                         </>

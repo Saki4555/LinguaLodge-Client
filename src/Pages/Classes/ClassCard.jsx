@@ -4,9 +4,11 @@ import useAuth from '../../Hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
+import useUserRole from '../../Hooks/useUserRole';
 
 
-const ClassCard = ({ item }) => {
+
+const ClassCard = ({ item, }) => {
 
     const { name, image, rating, instructor_name, seat, price, _id } = item;
     //  console.log(item.status);
@@ -16,6 +18,10 @@ const ClassCard = ({ item }) => {
     const location = useLocation();
     // console.log(location);
 
+    const [loggedUser] = useUserRole();
+
+    const isDisable = loggedUser?.role === "admin" || loggedUser?.role === "instructor" || seat === 0;
+    console.log(isDisable);
 
     const handleSelectedClass = () => {
         if (user && user.email) {
@@ -25,8 +31,8 @@ const ClassCard = ({ item }) => {
             }
             fetch('http://localhost:5000/selected', {
                 method: "POST",
-                headers:{
-                    'content-type' : 'application/json'
+                headers: {
+                    'content-type': 'application/json'
                 },
                 body: JSON.stringify(selectedClasees),
             })
@@ -52,7 +58,7 @@ const ClassCard = ({ item }) => {
                     }
                 })
         }
-        
+
         else {
             Swal.fire({
                 title: 'Are you sure?',
@@ -64,8 +70,8 @@ const ClassCard = ({ item }) => {
             }).then((result) => {
                 if (result.isConfirmed) {
                     navigate('/login', {
-                        state:{
-                            from:location
+                        state: {
+                            from: location
                         }
                     })
                 }
@@ -96,10 +102,19 @@ const ClassCard = ({ item }) => {
                     <p className='font-semibold tracking-wider'>Available seats: {seat}</p>
                 </div>
                 <div className="px-6 pt-8 pb-2">
-                    <button onClick={ ()=> handleSelectedClass(item)} className="bg-[#59aaa4] hover:bg-[#aacdcb] hover:text-gray-800 text-white tracking-wider font-bold py-2 px-4 rounded w-full transition">
-                        Select
-                    </button>
+                    {
+                        !isDisable && <button onClick={() => handleSelectedClass(item)} className="bg-[#59aaa4] hover:bg-[#aacdcb] hover:text-gray-800 text-white tracking-wider font-bold py-2 px-4 rounded w-full transition" disabled={isDisable} >
+                            Select
+                        </button>
+                    }
+
+                   { isDisable &&
+                     <button className="btn tracking-wider font-bold py-2 px-4 rounded w-full" disabled={isDisable} >
+                     Select
+                 </button>
+                   }
                 </div>
+
             </div>
         </div>
     );

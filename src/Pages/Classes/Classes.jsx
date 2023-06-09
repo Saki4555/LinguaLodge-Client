@@ -1,5 +1,7 @@
 
+import LazyLoad from 'react-lazy-load';
 import useClasses from '../../Hooks/useClasses';
+
 import classgif from '../../assets/Gif/classes.gif';
 import Container from '../Shared/Container';
 import ClassCard from './ClassCard';
@@ -8,11 +10,17 @@ const Classes = () => {
 
     const [classes] = useClasses();
     // console.log(classes);
+
+
+
     return (
         <Container>
             <div className='pt-12 mb-6'>
+                <LazyLoad>
+                    <img className='w-full object-cover object-center' src={classgif} alt="" />
+                </LazyLoad>
 
-                <img className='w-full object-cover object-center' src={classgif} alt="" />
+
             </div>
 
 
@@ -21,6 +29,7 @@ const Classes = () => {
                     classes.map(item => <ClassCard
                         key={item._id}
                         item={item}
+
                     >
                     </ClassCard>)
                 }
