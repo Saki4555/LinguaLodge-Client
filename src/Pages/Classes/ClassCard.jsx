@@ -3,12 +3,13 @@ import '@smastrom/react-rating/style.css';
 import useAuth from '../../Hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { toast } from 'react-hot-toast';
 
 
 const ClassCard = ({ item }) => {
 
     const { name, image, rating, instructor_name, seat, price, _id } = item;
-     console.log(item.status);
+    //  console.log(item.status);
 
     const { user } = useAuth();
     const navigate = useNavigate();
@@ -33,13 +34,21 @@ const ClassCard = ({ item }) => {
                 .then(data => {
                     if (data.insertedId) {
                         // refetch();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Selected Successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
+                        // Swal.fire({
+                        //     position: 'top-end',
+                        //     icon: 'success',
+                        //     title: 'Selected Successfully',
+                        //     showConfirmButton: false,
+                        //     timer: 1500
+                        // })
+
+                        toast.success('Selected successfully', {
+                            duration: 3000,
+                            style: {
+                                background: '#E3F4F4',
+                                fontWeight: '700'
+                            },
+                        });
                     }
                 })
         }

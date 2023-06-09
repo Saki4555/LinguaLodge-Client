@@ -18,7 +18,7 @@ import HomeSlider from './HomeSlider';
 const HomeBanner = () => {
     return (
         <>
-            <div className='pt-10'>
+            <div className='pt-16'>
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}

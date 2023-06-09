@@ -11,7 +11,6 @@ const NavBar = () => {
     const{user, logOut}  = useAuth();
     // console.log(user?.photoURL);
 
-    
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,6 +36,10 @@ const NavBar = () => {
     const navOptions = <>
         <li className="font-medium text-lg tracking-wider"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
         <li className="font-medium text-lg tracking-wider"><NavLink to="/classes" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Classes</NavLink></li>
+        {
+            user && <li className="font-medium text-lg tracking-wider"><NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Dashoard</NavLink></li>
+        }
+        
 
     </>;
     return (

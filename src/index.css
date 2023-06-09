@@ -6,6 +6,10 @@
     @apply text-[#8ecfcb]
 }
 
+.side-text {
+    @apply text-[#a0e0d8]
+}
+
 .bg-1{
    @apply bg-[#C2DEDC]
 }
