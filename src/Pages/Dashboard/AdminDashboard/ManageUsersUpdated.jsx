@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const ManageUsersUpdated = () => {
     const [users, loading, refetch] = useUsers();
+    console.log(users);
     const [disabledAdmins, setDisabledAdmins] = useState([]);
     const [disabledInstructors, setDisabledInstructors] = useState([]);
 
@@ -59,16 +60,37 @@ const ManageUsersUpdated = () => {
                     setDisabledInstructors((prevDisabledInstructors) => [
                         ...prevDisabledInstructors,
                         user._id,
+
                     ]);
-                    refetch();
-                    toast.success(`${user?.name} is now an instructor`, {
-                        duration: 1500,
-                        position: "top-right",
-                        style: {
-                            background: "#E3F4F4",
-                            fontWeight: "700",
+
+                    const newInstructor = { name: user.name, email:user.email, image:user.image}
+                    console.log(newInstructor);
+                    // post api
+
+                    fetch('http://localhost:5000/instructors', {
+                        method: "POST",
+                        headers:{
+                            'content-type' : 'application/json'
                         },
-                    });
+                        body: JSON.stringify(newInstructor),
+                    })
+                    .then(instructorRes => instructorRes.json())
+                    .then( instructorData =>{
+                        console.log(instructorData);
+                        if(instructorData.insertedId){
+
+                            refetch();
+                            
+                            toast.success(`${user?.name} is now an instructor`, {
+                                duration: 1500,
+                                position: "top-right",
+                                style: {
+                                    background: "#E3F4F4",
+                                    fontWeight: "700",
+                                },
+                            });
+                        }
+                    }) 
                 }
             });
     };

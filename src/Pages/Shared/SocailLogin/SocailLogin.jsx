@@ -10,15 +10,15 @@ const SocailLogin = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
-    console.log(from);
+    // console.log(from);
 
     const handleGoogleSignIn = () => {
         googleSignIn()
         .then((result) => {
            
             const loggedUser = result.user;
-            // console.log(loggedUser);
-            const savedUser = { name: loggedUser.displayName, email:loggedUser.email }
+            // console.log(loggedUser.photoURL);
+            const savedUser = { name: loggedUser.displayName, email:loggedUser.email,    image:loggedUser.photoURL }
 
             
             fetch('http://localhost:5000/users', {
