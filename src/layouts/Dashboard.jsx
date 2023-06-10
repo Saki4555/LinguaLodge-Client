@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import Container from "../Pages/Shared/Container";
 import { Toaster } from "react-hot-toast";
 import useUserRole from "../Hooks/useUserRole";
 import StudentSideBar from "../Pages/Dashboard/StudentDashboard/StudentSideBar";
 import InstructorSideBar from "../Pages/Dashboard/InstructorDashboard/InstructorSideBar";
+import useAuth from "../Hooks/useAuth";
+import AdminSideBar from "../Pages/Dashboard/AdminDashboard/AdminSideBar";
 
 
 const Dashboard = () => {
@@ -12,6 +14,14 @@ const Dashboard = () => {
 
     const [loggedUser] = useUserRole();
     // console.log(loggedUser);
+
+    const { user } = useAuth();
+
+    const navigate = useNavigate();
+
+    if( !user){
+        return navigate('/');
+    }
 
     return (
         <>
@@ -37,7 +47,7 @@ const Dashboard = () => {
                                     <InstructorSideBar></InstructorSideBar>
                                     : loggedUser?.role === 'admin' ?
                                         <>
-                                            <li>admin</li>
+                                            <AdminSideBar></AdminSideBar>
                                         </>
                                         :
                                         <StudentSideBar></StudentSideBar>

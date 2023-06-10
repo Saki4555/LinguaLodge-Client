@@ -21,7 +21,8 @@ const ClassCard = ({ item, }) => {
     const [loggedUser] = useUserRole();
 
     const isDisable = loggedUser?.role === "admin" || loggedUser?.role === "instructor" || seat === 0;
-    console.log(isDisable);
+    
+    // console.log(isDisable);
 
     const handleSelectedClass = () => {
         if (user && user.email) {
