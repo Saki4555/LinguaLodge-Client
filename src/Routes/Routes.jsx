@@ -12,6 +12,7 @@ import MyClass from "../Pages/Dashboard/InstructorDashboard/MyClass";
 
 import ManageUsersUpdated from "../Pages/Dashboard/AdminDashboard/ManageUsersUpdated";
 import MangeClasses from "../Pages/Dashboard/AdminDashboard/MangeClasses";
+import Payment from "../Pages/Dashboard/StudentDashboard/Payment/Payment";
 
 
 
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
         {
           path:'selectedclasses',
           element: <SelectedClassses></SelectedClassses>
+        },
+        {
+          path: 'pay',
+          element:<Payment></Payment>,
+          // loader: ({ params }) => fetch(``)
         },
 
         // instructor

@@ -3,16 +3,17 @@ import useSelectedClasses from "../../../Hooks/useSelectedClasses";
 import Swal from "sweetalert2";
 import { toast } from "react-hot-toast";
 import { GridLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 const SelectedClassses = () => {
 
-    const [selected,loading , refetch] = useSelectedClasses();
+    const [selected, loading, refetch] = useSelectedClasses();
     // console.log(selected);
 
     if (loading) {
         return <div className="ml-10 mt-16">
 
-           <GridLoader
+            <GridLoader
                 color="#C2DEDC"
             ></GridLoader>
 
@@ -103,7 +104,10 @@ const SelectedClassses = () => {
                                 <button onClick={() => handleDelete(item)} className="btn btn-error btn-sm bg-red-500 text-white"><FaTrashAlt></FaTrashAlt></button>
                             </td>
                             <th>
-                                <button className="btn btn-warning btn-sm">Pay</button>
+                                <Link to={`/dashboard/pay?price=${item.price}`}>
+                                    <button className="btn btn-warning btn-sm">Pay</button>
+                                </Link>
+
                             </th>
                         </tr>)
                     }
