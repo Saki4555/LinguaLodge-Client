@@ -1,6 +1,5 @@
 [
     {
-        "_id": "1",
         "name": "Beginner Spanish",
         "image": "https://i.ibb.co/PwG40NB/spanish.png",
         "rating": 4.5,
@@ -12,7 +11,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "2",
         "name": "Intermediate French",
         "image": "https://i.ibb.co/wJHgGp5/french.png",
         "rating": 4.2,
@@ -24,7 +22,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "3",
         "name": "Advanced German",
         "image": "https://i.ibb.co/ftpv7Mv/german.png",
         "rating": 4.8,
@@ -36,7 +33,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "4",
         "name": "Beginner Italian",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.3,
@@ -48,7 +44,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "5",
         "name": "Business English",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.6,
@@ -60,7 +55,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "6",
         "name": "Beginner Mandarin",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.1,
@@ -72,7 +66,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "7",
         "name": "Intermediate Japanese",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.4,
@@ -84,7 +77,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "8",
         "name": "Advanced Portuguese",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.7,
@@ -96,7 +88,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "9",
         "name": "Beginner Russian",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.2,
@@ -108,7 +99,6 @@
         "enrolled_student": 0
     },
     {
-        "_id": "10",
         "name": "Intermediate Arabic",
         "image": "https://i.ibb.co/3hJZ98J/random.jpg",
         "rating": 4.5,

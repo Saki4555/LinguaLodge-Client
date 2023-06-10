@@ -9,8 +9,9 @@ import Dashboard from "../layouts/Dashboard";
 import SelectedClassses from "../Pages/Dashboard/StudentDashboard/SelectedClassses";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 import MyClass from "../Pages/Dashboard/InstructorDashboard/MyClass";
-import Manageclass from "../Pages/Dashboard/AdminDashboard/Manageclass";
+
 import ManageUsersUpdated from "../Pages/Dashboard/AdminDashboard/ManageUsersUpdated";
+import MangeClasses from "../Pages/Dashboard/AdminDashboard/MangeClasses";
 
 
 
@@ -57,14 +58,16 @@ const router = createBrowserRouter([
         },
         
         // admin
+      
         {
-          path: 'mangeclass',
-          element: <Manageclass></Manageclass>
+          path: 'manageclasses',
+          element: <MangeClasses></MangeClasses>
         },
         {
           path: 'manageusers',
           element: <ManageUsersUpdated></ManageUsersUpdated>
         }
+        
       ]
     }
   ]);
