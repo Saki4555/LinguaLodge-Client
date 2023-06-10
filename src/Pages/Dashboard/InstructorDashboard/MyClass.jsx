@@ -17,7 +17,7 @@ const MyClass = () => {
         </div>
     }
     return (
-        <div className="overflow-x-auto pl-5 pt-12">
+        <div className="overflow-x-auto pl-5 pt-12 font-kanit">
             <table className="table">
                 {/* head */}
                 <thead>

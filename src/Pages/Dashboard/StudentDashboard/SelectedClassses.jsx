@@ -2,12 +2,22 @@ import { FaTrashAlt } from "react-icons/fa";
 import useSelectedClasses from "../../../Hooks/useSelectedClasses";
 import Swal from "sweetalert2";
 import { toast } from "react-hot-toast";
-
+import { GridLoader } from "react-spinners";
 
 const SelectedClassses = () => {
 
-    const [selected, , refetch] = useSelectedClasses();
+    const [selected,loading , refetch] = useSelectedClasses();
     // console.log(selected);
+
+    if (loading) {
+        return <div className="ml-10 mt-16">
+
+           <GridLoader
+                color="#C2DEDC"
+            ></GridLoader>
+
+        </div>
+    }
 
     const handleDelete = item => {
         Swal.fire({
@@ -49,7 +59,7 @@ const SelectedClassses = () => {
     }
 
     return (
-        <div className="overflow-x-auto pl-10 pt-16">
+        <div className="overflow-x-auto pl-10 pt-16 font-kanit">
             <table className="table">
                 {/* head */}
                 <thead>

@@ -10,7 +10,8 @@ import SelectedClassses from "../Pages/Dashboard/StudentDashboard/SelectedClasss
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 import MyClass from "../Pages/Dashboard/InstructorDashboard/MyClass";
 import Manageclass from "../Pages/Dashboard/AdminDashboard/Manageclass";
-import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers";
+import ManageUsersUpdated from "../Pages/Dashboard/AdminDashboard/ManageUsersUpdated";
+
 
 
 const router = createBrowserRouter([
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'manageusers',
-          element: <ManageUsers></ManageUsers>
+          element: <ManageUsersUpdated></ManageUsersUpdated>
         }
       ]
     }
