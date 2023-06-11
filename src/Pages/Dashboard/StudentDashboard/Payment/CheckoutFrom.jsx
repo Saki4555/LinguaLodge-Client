@@ -96,7 +96,7 @@ const CheckoutFrom = ({ price, id, selectedClassId }) => {
                     toast.success('Payment successful', {
                         duration: 1500,
                         position: "top-right",
-                        icon: <FaStripe className="text-semibold text-lg w-10 text-orange-700 h-10"></FaStripe>,
+                        icon: <FaStripe className="text-semibold bg-slate-950 text-lg w-10 text-orange-500 h-5"></FaStripe>,
                         style: {
                             background: '#E3F4F4',
                             fontWeight: '700'

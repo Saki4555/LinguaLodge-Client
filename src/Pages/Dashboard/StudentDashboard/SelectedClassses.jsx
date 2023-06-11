@@ -94,10 +94,10 @@ const SelectedClassses = () => {
 
                                 </div>
                             </td>
-                            <td>
+                            <td className="text-[#090580]">
                                 {item.name}
                             </td>
-                            <td>
+                            <td className="text-lime-700">
                                 {item.price}
                             </td>
                             <td>
