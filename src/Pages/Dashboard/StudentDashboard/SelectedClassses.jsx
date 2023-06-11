@@ -61,7 +61,7 @@ const SelectedClassses = () => {
 
     return (
         <div className="overflow-x-auto pl-10 pt-16 font-kanit">
-            <table className="table">
+            <table className="table table-zebra">
                 {/* head */}
                 <thead>
                     <tr>
@@ -105,7 +105,7 @@ const SelectedClassses = () => {
                             </td>
                             <th>
                                 <Link to={`/dashboard/pay?price=${item.price}&id=${item._id}&selectedClassId=${item.selectedClassId}`}>
-                                    <button className="btn btn-warning btn-sm">Pay</button>
+                                    <button className="btn  btn-warning btn-sm">Pay</button>
                                 </Link>
 
                             </th>

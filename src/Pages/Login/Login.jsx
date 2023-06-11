@@ -5,7 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { FaEye, FaEyeSlash, } from "react-icons/fa";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 
 const Login = () => {
 
@@ -31,7 +31,8 @@ const Login = () => {
                         fontWeight: '700'
                     },
                 });
-                navigate(from, {replace: true});
+
+                navigate(from, { replace: true });
             })
             .catch((error) => {
                 console.log(error.message);
@@ -85,12 +86,14 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="flex items-center justify-between">
-                            <button
+                            <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
                                 className="bg-[#88d5d0] hover:bg-[#b9dbdb] text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                 type="submit"
                             >
                                 Sign In
-                            </button>
+                            </motion.button>
                         </div>
                     </div>
 

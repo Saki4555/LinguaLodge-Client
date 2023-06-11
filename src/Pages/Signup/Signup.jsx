@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash, } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import SocailLogin from "../Shared/SocailLogin/SocailLogin";
+import { motion } from "framer-motion"
 // import axios from 'axios';
 
 
@@ -25,7 +26,7 @@ const Signup = () => {
                 // console.log(user);
                 updateUserProfile(data.name, data.PhotoUrl)
                     .then(() => {
-                        const savedUser = { name: data.name, email: data.email,image: data.PhotoUrl };
+                        const savedUser = { name: data.name, email: data.email, image: data.PhotoUrl };
                         // axios.post('http://localhost:5000/users', {
                         //     savedUser
                         // })
@@ -55,18 +56,18 @@ const Signup = () => {
                             .then(data => {
                                 if (data.insertedId)
                                     reset();
-                                    toast.success('Singed up successfully', {
-                                        duration: 1500,
-                                        style: {
-                                            background: '#E3F4F4',
-                                            fontWeight: '700'
-                                        },
-                                    });
-                                    navigate('/');
+                                toast.success('Singed up successfully', {
+                                    duration: 1500,
+                                    style: {
+                                        background: '#E3F4F4',
+                                        fontWeight: '700'
+                                    },
+                                });
+                                navigate('/');
                             })
 
 
-                        
+
                     })
                     .catch(error => {
                         console.log(error);
@@ -194,12 +195,14 @@ const Signup = () => {
                             {errors.PhotoUrl && <span className="text-red-500">PhotoURL is required</span>}
                         </div>
                         <div className="flex items-center justify-between">
-                            <button
+                            <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
                                 className="bg-[#88d5d0] hover:bg-[#b9dbdb] text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                 type="submit"
                             >
                                 Sign In
-                            </button>
+                            </motion.button>
                         </div>
                     </div>
                     <p className="ml-8 pb-7 pt-2">Already have and account? <Link to='/login'><span className="text-yellow-600 hover:text-blue-950">Login</span></Link></p>

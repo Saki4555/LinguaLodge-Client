@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
 import useUserRole from '../../Hooks/useUserRole';
 import LazyLoad from 'react-lazy-load';
-
+import { motion } from 'framer-motion';
 
 
 const ClassCard = ({ item, }) => {
@@ -83,7 +83,7 @@ const ClassCard = ({ item, }) => {
     }
 
     return (
-        <div className="w-full px-2 lg:p-0 lg:w-[275px] font-kanit hover:bg-[#eef3f2] hover:shadow-2xl overflow-hidden transition">
+        <div className="w-full px-2 lg:p-0 lg:w-[275px] font-kanit hover:bg-[#eef3f2] overflow-hidden transition">
             <LazyLoad>
                 <img src={image} alt="Course Image" className="w-full h-60 object-cover object-center" />
             </LazyLoad>
@@ -107,9 +107,12 @@ const ClassCard = ({ item, }) => {
                 </div>
                 <div className="px-6 pt-8 pb-2">
                     {
-                        !isDisable && <button onClick={() => handleSelectedClass(item)} className="bg-[#59aaa4] hover:bg-[#aacdcb] hover:text-gray-800 text-white tracking-wider font-bold py-2 px-4 rounded w-full transition" disabled={isDisable} >
+                        !isDisable && <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => handleSelectedClass(item)} className="bg-[#59aaa4] hover:bg-[#aacdcb] hover:text-gray-800 text-white tracking-wider font-bold py-2 px-4 rounded w-full transition" disabled={isDisable} >
                             Select
-                        </button>
+                        </motion.button>
                     }
 
                     {isDisable &&

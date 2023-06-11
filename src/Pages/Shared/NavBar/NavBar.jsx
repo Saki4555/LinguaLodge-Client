@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavLogin from "../../../Components/Buttons/NavLogin";
 import useAuth from "../../../Hooks/useAuth";
-
-
+import logo from '../../../assets/Home/logo.png';
 
 const NavBar = () => {
 
@@ -58,7 +57,8 @@ const NavBar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <img src={logo} className="w-16 h-12 object-cover object-center" alt="logo" />
+                <Link to='/' className="btn btn-ghost normal-case text-xl lg:text-2xl pl-0 -ml-1">LinguaLodge</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="group menu menu-horizontal px-1">
@@ -72,9 +72,8 @@ const NavBar = () => {
                     user?.email ? <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-16 rounded-full">
-                            <img src={user?.photoURL} />
+                            <img src={user?.photoURL} className="object-cover object-center" />
                            
-                            
                         </div>
                        
                     </label>
