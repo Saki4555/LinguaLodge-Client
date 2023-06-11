@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import NavLogin from "../../../Components/Buttons/NavLogin";
 import useAuth from "../../../Hooks/useAuth";
 import logo from '../../../assets/Home/logo.png';
@@ -7,8 +7,14 @@ import logo from '../../../assets/Home/logo.png';
 const NavBar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
-    const{user, logOut}  = useAuth();
+    const { user, logOut } = useAuth();
     // console.log(user?.photoURL);
+
+    const location = useLocation();
+    // console.log(location);
+
+    const navColorChange = location.pathname.includes('classes') || location.pathname.includes('instructors') || location.pathname.includes('dashboard');
+    // console.log(navColorChange);
 
 
     useEffect(() => {
@@ -35,17 +41,18 @@ const NavBar = () => {
     const navOptions = <>
         <li className="font-medium text-lg tracking-wider"><NavLink to="/" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Home</NavLink></li>
         <li className="font-medium text-lg tracking-wider"><NavLink to="/classes" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Classes</NavLink></li>
+        <li className="font-medium text-lg tracking-wider"><NavLink to="/instructors" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Instructors</NavLink></li>
+
         {
             user && <li className="font-medium text-lg tracking-wider"><NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'nav-text' : '')}>Dashoard</NavLink></li>
         }
-        
+
 
     </>;
     return (
 
 
-        <div className={`navbar pr-5 bg-base-100 fixed z-10 font-kanit ${isScrolled ? "opacity-70" : ""
-            }`}>
+        <div className={`navbar pr-5 bg-base-100 fixed z-10 font-kanit ${isScrolled ? "opacity-70" : ""} ${ navColorChange ? "bg-[#e6eded]" : ""}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -57,8 +64,8 @@ const NavBar = () => {
                         }
                     </ul>
                 </div>
-                <img src={logo} className="w-16 h-12 object-cover object-center" alt="logo" />
-                <Link to='/' className="btn btn-ghost normal-case text-xl lg:text-2xl pl-0 -ml-1">LinguaLodge</Link>
+                <img src={logo} className="w-16 h-12 object-cover object-center rounded" alt="logo" />
+                <Link to='/' className={`btn btn-ghost normal-case text-xl lg:text-2xl ${navColorChange ? "pl-2" : "pl-0"}`}>LinguaLodge</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="group menu menu-horizontal px-1">
@@ -70,29 +77,29 @@ const NavBar = () => {
             <div className="navbar-end">
                 {
                     user?.email ? <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-16 rounded-full">
-                            <img src={user?.photoURL} className="object-cover object-center" />
-                           
-                        </div>
-                       
-                    </label>
-                    <ul tabIndex={0} className="mt-3 p-4 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                        <li className="hidden">
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                        </li>
-                        <li className="hidden"><a>Settings</a></li>
-                        <button onClick={handleLogOUt} className="btn btn-md">Logout</button>
-                    </ul>
-                </div>
-                :  <NavLogin></NavLogin>
-                }
-               
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-16 rounded-full">
+                                <img src={user?.photoURL} className="object-cover object-center" />
 
-                
+                            </div>
+
+                        </label>
+                        <ul tabIndex={0} className="mt-3 p-4 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            <li className="hidden">
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                            <li className="hidden"><a>Settings</a></li>
+                            <button onClick={handleLogOUt} className="btn btn-md">Logout</button>
+                        </ul>
+                    </div>
+                        : <NavLogin navColorChange={navColorChange}></NavLogin>
+                }
+
+
+
             </div>
         </div>
 

@@ -9,7 +9,7 @@ import ClassCard from './ClassCard';
 const Classes = () => {
 
     const [classes] = useClasses();
-    console.log(classes);
+    // console.log(classes);
 
 
     return (

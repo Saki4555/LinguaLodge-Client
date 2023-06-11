@@ -28,7 +28,7 @@ const Dashboard = () => {
 
             <NavBar></NavBar>
             <Container>
-                <div className="drawer lg:drawer-open font-kanit pt-24">
+                <div className="drawer lg:drawer-open font-kanit pt-[77px]">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content bg-[#F9F9F9]">
                         {/* Page content here */}
