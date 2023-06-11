@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
 import useUserRole from '../../Hooks/useUserRole';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -21,7 +22,7 @@ const ClassCard = ({ item, }) => {
     const [loggedUser] = useUserRole();
 
     const isDisable = loggedUser?.role === "admin" || loggedUser?.role === "instructor" || seat === 0;
-    
+
     // console.log(isDisable);
 
     const handleSelectedClass = () => {
@@ -82,11 +83,13 @@ const ClassCard = ({ item, }) => {
     }
 
     return (
-        <div className="w-full px-2 lg:p-0 lg:w-72 font-kanit hover:bg-[#eef3f2] hover:shadow-2xl overflow-hidden transition">
-            <img src={image} alt="Course Image" className="w-full h-60" />
+        <div className="w-full px-2 lg:p-0 lg:w-[275px] font-kanit hover:bg-[#eef3f2] hover:shadow-2xl overflow-hidden transition">
+            <LazyLoad>
+                <img src={image} alt="Course Image" className="w-full h-60 object-cover object-center" />
+            </LazyLoad>
             <div className='border border-black'>
                 <div className="px-6 pb-4 pt-6">
-                    <p className="text-xl uppercase font-semibold">{name}</p>
+                    <p className="text-lg uppercase font-semibold">{name}</p>
                     <p className="text-gray-700">{instructor_name}</p>
 
                 </div>
@@ -109,11 +112,11 @@ const ClassCard = ({ item, }) => {
                         </button>
                     }
 
-                   { isDisable &&
-                     <button className="btn tracking-wider font-bold py-2 px-4 rounded w-full" disabled={isDisable} >
-                     Select
-                 </button>
-                   }
+                    {isDisable &&
+                        <button className="btn tracking-wider font-bold py-2 px-4 rounded w-full" disabled={isDisable} >
+                            Select
+                        </button>
+                    }
                 </div>
 
             </div>

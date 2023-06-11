@@ -3,8 +3,10 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
+import { toast } from "react-hot-toast";
+import { FaStripe } from "react-icons/fa";
 
-const CheckoutFrom = ({ price }) => {
+const CheckoutFrom = ({ price, id, selectedClassId }) => {
 
     const stripe = useStripe();
     const elements = useElements();
@@ -76,17 +78,33 @@ const CheckoutFrom = ({ price }) => {
         if (paymentIntent?.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
             // save payment information to the server
-            // const payment = {
-            //     email: user?.email,
-            //     transactionId: paymentIntent.id,
-            //     price,
-            //     date: new Date(),
-            //     quantity: cart.length,
-            //     cartItems: cart.map(item => item._id),
-            //     menuItems: cart.map(item => item.menuItemId),
-            //     status: 'service pending',
-            //     itemNames: cart.map(item => item.name)
-            // }
+            const payment = {
+                email: user?.email,
+                transactionId: paymentIntent.id,
+                price,
+                date: new Date(),
+                id: id,
+                classId: selectedClassId,
+                
+            }
+
+            axios.post('http://localhost:5000/payments', payment)
+            .then(res => {
+                const posted = res.data;
+                console.log(posted);
+                if(posted.classesUpdateResult.modifiedCount && posted.insertResult.insertedId && posted.selectedClassUpdateResult.modifiedCount){
+                    toast.success('Payment successful', {
+                        duration: 1500,
+                        position: "top-right",
+                        icon: <FaStripe className="text-semibold text-lg w-10 text-orange-700 h-10"></FaStripe>,
+                        style: {
+                            background: '#E3F4F4',
+                            fontWeight: '700'
+                        },
+                    });
+                }
+                
+            })
 
             // axiosSecure.post('/payments', payment)
             // .then(res => {
