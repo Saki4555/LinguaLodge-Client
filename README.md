@@ -42,3 +42,6 @@ This project requires the following packages:
 - sweetalert2: ^11.7.11
 - swiper: ^9.3.2
 
+## Live Demo
+
+Check out the live site [here](https://assignment-12-e7bed.web.app/).
