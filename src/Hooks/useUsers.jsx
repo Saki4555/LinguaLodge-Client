@@ -6,7 +6,7 @@ const useUsers = () => {
     const { data: users = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async() => {
-            const res = await axios.get('http://localhost:5000/users');
+            const res = await axios.get('https://assignment-12-server-gold.vercel.app/users');
             return res.data;
         }
     });

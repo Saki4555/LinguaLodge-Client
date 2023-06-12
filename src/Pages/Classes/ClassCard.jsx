@@ -22,6 +22,7 @@ const ClassCard = ({ item, }) => {
     const [loggedUser] = useUserRole();
 
     const isDisable = loggedUser?.role === "admin" || loggedUser?.role === "instructor" || seat === 0;
+    const bgRed = seat === 0;
 
     // console.log(isDisable);
 
@@ -31,7 +32,7 @@ const ClassCard = ({ item, }) => {
                 selectedClassId: _id,
                 name, image, price, email: user.email,
             }
-            fetch('http://localhost:5000/selected', {
+            fetch('https://assignment-12-server-gold.vercel.app/selected', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -84,7 +85,7 @@ const ClassCard = ({ item, }) => {
     }
 
     return (
-        <div className="w-full px-2 lg:p-0 lg:w-[275px] font-kanit hover:bg-[#eef3f2] overflow-hidden transition">
+        <div className={`w-full px-2 lg:p-0 lg:w-[275px] font-kanit hover:bg-[#eef3f2] overflow-hidden transition ${bgRed ? 'bg-[#FF6969]' : ""}`}>
             <LazyLoad>
                 <img src={image} alt="Course Image" className="w-full h-60 object-cover object-center" />
             </LazyLoad>

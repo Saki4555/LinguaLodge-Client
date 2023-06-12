@@ -11,7 +11,7 @@ const usePayments = () => {
     const { data: payments = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['payments', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/payments/${user?.email}`);
+            const res = await axios.get(`https://assignment-12-server-gold.vercel.app/payments/${user?.email}`);
             return res.data;
         }
     });

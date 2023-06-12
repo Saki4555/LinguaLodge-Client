@@ -10,7 +10,7 @@ const useSelectedClasses = () => {
         const { data: selected = [], isLoading: loading, refetch } = useQuery({
             queryKey: ['selected', user?.email],
             queryFn: async () => {
-                const res = await axios.get(`http://localhost:5000/selected/${user?.email}`);
+                const res = await axios.get(`https://assignment-12-server-gold.vercel.app/selected/${user?.email}`);
                 return res.data;
             }
         });

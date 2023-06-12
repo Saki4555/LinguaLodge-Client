@@ -10,7 +10,7 @@ const useInstructorClasses = () => {
     const { data: instructorClasses = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['classes', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/classes/${user?.email}`);
+            const res = await axios.get(`https://assignment-12-server-gold.vercel.app/classes/${user?.email}`);
             return res.data;
         }
     });

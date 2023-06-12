@@ -1,5 +1,6 @@
 import useAllInstructors from "../../../Hooks/useAllInstructors";
-import PopularClassCard from "../PopularClasses/PopularClassCard";
+
+import PopularInstructorCard from "./PopularInstructorCard";
 
 
 const PopularInstructors = () => {
@@ -11,12 +12,12 @@ const PopularInstructors = () => {
             </div>
             <div className="grid lg:grid-cols-3 gap-7 font-kanit pb-16">
                 {
-                    allinstructors.slice(0, 6).map(item => <PopularClassCard
-                        key={item._id}
-                        item={item}
+                    allinstructors.slice(0, 6).map(item => <PopularInstructorCard
+                    key={item._id}
+                    item={item}
                     >
 
-                    </PopularClassCard>)
+                    </PopularInstructorCard>)
                 }
             </div>
         </>

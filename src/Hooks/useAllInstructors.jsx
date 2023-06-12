@@ -5,7 +5,7 @@ const useAllInstructors = () => {
     const { data: allinstructors = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['allinstructors'],
         queryFn: async() => {
-            const res = await axios.get('http://localhost:5000/allinstructors');
+            const res = await axios.get('https://assignment-12-server-gold.vercel.app/allinstructors');
             return res.data;
         }
     });

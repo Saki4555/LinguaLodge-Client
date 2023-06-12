@@ -43,7 +43,7 @@ const MangeClasses = () => {
 
     const handleStatus = (item, roleToUpdate) => {
         // console.log(item._id);
-        fetch(`http://localhost:5000/classes/status/${item._id}`, {
+        fetch(`https://assignment-12-server-gold.vercel.app/classes/status/${item._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ const MangeClasses = () => {
     const onSubmit = data => {
         console.log(data);
         setIsModalOpen(false);
-        fetch(`http://localhost:5000/classes/feedback/${data.classId}`, {
+        fetch(`https://assignment-12-server-gold.vercel.app/classes/feedback/${data.classId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ const MangeClasses = () => {
 
     return (
         <div className="overflow-x-auto pl-7 pt-16 font-kanit">
-            <table className="table">
+            <table className="table table-zebra">
                 {/* head */}
                 <thead>
                     <tr>

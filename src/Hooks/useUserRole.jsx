@@ -9,7 +9,7 @@ const useUserRole = () => {
     const { data: loggedUser = {}, isLoading: loading, refetch } = useQuery({
         queryKey: ['role', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/users/role/${user?.email}`);
+            const res = await axios.get(`https://assignment-12-server-gold.vercel.app/users/role/${user?.email}`);
             return res.data;
         }
     });

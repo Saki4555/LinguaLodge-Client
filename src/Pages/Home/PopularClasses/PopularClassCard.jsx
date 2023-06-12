@@ -1,17 +1,20 @@
+import LazyLoad from "react-lazy-load";
 
 
-const PopularClassCard = ({item}) => {
+const PopularClassCard = ({ item }) => {
 
-    return (
-        <div className="card bg-base-100 shadow-xl border-2 border-[#c6d4d4]">
-        <figure className="px-10 pt-10">
-          <img src={item?.image} alt="class" className="rounded-xl w-full h-64 object-cover object-center border-8 border-[#c6d4d4]" />
-        </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">{item?.name}</h2>
-        </div>
+  return (
+    <div className="card bg-base-100 shadow-xl">
+      <figure>
+        <LazyLoad>
+          <img src={item.image} alt="class" className="w-96 h-64 object-cover object-center" />
+        </LazyLoad>
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title text-center">{item.name}</h2>
       </div>
-    );
+    </div>
+  );
 };
 
 export default PopularClassCard;

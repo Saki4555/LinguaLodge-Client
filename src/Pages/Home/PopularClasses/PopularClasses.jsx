@@ -11,7 +11,7 @@ const Popularclasses = () => {
         <div className="font-kanit mt-20 mb-14">
             <h2 className="text-4xl text-center">Popular Classes</h2>
         </div>
-        <div className="grid lg:grid-cols-3 gap-7 font-kanit">
+        <div className="grid lg:grid-cols-3 gap-10 font-kanit">
             {
                 classes.slice(0, 6).map(item => <PopularClassCard
                     key={item._id}

@@ -1,57 +1,62 @@
 [
     {
-        "name": "Maria Lopez",
-        "email": "maria@lodge.com",
-        "image": "https://i.ibb.co/W0DfK5w/instructor1.jpg"
+        "title": "Great Language Learning Experience",
+        "feedback": "I had a fantastic time at the summer camp. The language lessons were engaging and interactive. The teachers were patient and helpful, and I made significant progress in my language skills. Highly recommended!",
+        "imageName": "https://i.ibb.co/pKXx1q6/student1.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Jean Baptiste",
-        "email": "jean@lodge.com",
-        "image": "https://i.ibb.co/GQXGBKX/instructor2.jpg"
+        "title": "Amazing Cultural Exchange",
+        "feedback": "The summer camp provided a unique opportunity to immerse myself in a different culture. I learned not only the language but also gained insights into the traditions and customs of the country. It was a truly enriching experience.",
+        "imageName": "https://i.ibb.co/N6zGpQg/student2.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Sophia Garcia",
-        "email": "sophia@lodge.com",
-        "image": "https://i.ibb.co/W0DfK5w/instructor1.jpg"
+        "title": "Outstanding Language Instructors",
+        "feedback": "The language instructors at the summer camp were exceptional. They created a supportive learning environment and tailored the lessons to meet each student's needs. Their passion for teaching was evident, and I felt motivated to learn every day.",
+        "imageName": "https://i.ibb.co/pKXx1q6/student1.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Giulia Rossi",
-        "email": "giulia@lodge.com",
-        "image": "https://i.ibb.co/Bn5yTp8/instructor3.jpg"
+        "title": "Unforgettable Language Immersion",
+        "feedback": "The summer camp provided an unforgettable language immersion experience. From morning language classes to afternoon cultural activities, every moment was filled with opportunities to practice and improve my language skills. I made friends from around the world and created memories that will last a lifetime.",
+        "imageName": "https://i.ibb.co/N6zGpQg/student2.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Isabella Thompson",
-        "email": "isabella@lodge.com",
-        "image": "https://i.ibb.co/W0DfK5w/instructor1.jpg"
+        "title": "Expert and Supportive Teachers",
+        "feedback": "The teachers at the summer camp were experts in their field and made the language learning process enjoyable. They used a variety of teaching methods, incorporating games, songs, and conversations to keep us engaged. Their support and guidance helped me gain confidence in speaking the language.",
+        "imageName": "https://i.ibb.co/pKXx1q6/student1.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Amelia Smith",
-        "email": "amelia@lodge.com",
-        "image": "https://i.ibb.co/68XdMXy/instructor4.jpg"
+        "title": "Well-Organized Program",
+        "feedback": "I was impressed by the organization of the summer camp program. The schedule was well-balanced, with a mix of language classes, cultural activities, and excursions. The staff ensured that everything ran smoothly, and I felt safe and taken care of throughout my stay.",
+        "imageName": "https://i.ibb.co/N6zGpQg/student2.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Yuki Tanaka",
-        "email": "yuki@lodge.com",
-        "image": "https://i.ibb.co/Bn5yTp8/instructor3.jpg"
+        "title": "Positive Learning Environment",
+        "feedback": "The summer camp fostered a positive learning environment where I felt comfortable making mistakes and learning from them. The teachers and fellow students were supportive and encouraged me to practice speaking without hesitation. It was an ideal setting for language learning.",
+        "imageName": "https://i.ibb.co/pKXx1q6/student1.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Ana Silva",
-        "email": "ana@lodge.com",
-        "image": "https://i.ibb.co/68XdMXy/instructor4.jpg"
+        "title": "Inspiring Cultural Experiences",
+        "feedback": "The cultural experiences offered at the summer camp were inspiring. From visiting historical landmarks to participating in traditional festivities, I gained a deeper understanding of the country's culture and traditions. It was an eye-opening journey that broadened my horizons.",
+        "imageName": "https://i.ibb.co/N6zGpQg/student2.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Dmitri Ivanov",
-        "email": "dmitri@lodge.com",
-        "image": "https://i.ibb.co/GQXGBKX/instructor2.jpg"
+        "title": "Effective Language Practice",
+        "feedback": "The summer camp provided ample opportunities for effective language practice. Through group discussions, role-plays, and language games, I was able to apply what I learned in real-life situations. The practical approach helped me develop my speaking, listening, and comprehension skills.",
+        "imageName": "https://i.ibb.co/pKXx1q6/student1.jpg",
+        "profession": "Student"
     },
     {
-        "name": "Emma Davis",
-        "email": "emmad@lodge.com",
-        "image": "https://i.ibb.co/68XdMXy/instructor4.jpg"
-    },
-    {
-        "name": "Charlotte Anderson",
-        "email": "charlotte@lodge.com",
-        "image": "https://i.ibb.co/Bn5yTp8/instructor3.jpg"
+        "title": "Professional and Friendly Staff",
+        "feedback": "The staff members at the summer camp were not only professional but also friendly and approachable. They were always available to answer questions, offer guidance, and make sure that every student felt included. Their dedication made the entire experience even more enjoyable.",
+        "imageName": "https://i.ibb.co/N6zGpQg/student2.jpg",
+        "profession": "Student"
     }
 ]

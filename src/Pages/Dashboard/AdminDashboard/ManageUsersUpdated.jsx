@@ -19,7 +19,7 @@ const ManageUsersUpdated = () => {
     }
 
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/users/role/${user._id}`, {
+        fetch(`https://assignment-12-server-gold.vercel.app/users/role/${user._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const ManageUsersUpdated = () => {
     };
 
     const handleMakeInstructor = (user) => {
-        fetch(`http://localhost:5000/users/role/${user._id}`, {
+        fetch(`https://assignment-12-server-gold.vercel.app/users/role/${user._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const ManageUsersUpdated = () => {
                     console.log(newInstructor);
                     // post api
 
-                    fetch('http://localhost:5000/instructors', {
+                    fetch('https://assignment-12-server-gold.vercel.app/instructors', {
                         method: "POST",
                         headers:{
                             'content-type' : 'application/json'
@@ -97,14 +97,14 @@ const ManageUsersUpdated = () => {
 
     return (
         <div className="overflow-x-auto pl-10 pt-16 font-kanit">
-            <table className="table">
+            <table className="table table-zebra">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Action</th>
+                        <th className="pl-10">Action</th>
                     </tr>
                 </thead>
                 <tbody>

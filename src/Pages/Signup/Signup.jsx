@@ -27,7 +27,7 @@ const Signup = () => {
                 updateUserProfile(data.name, data.PhotoUrl)
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email, image: data.PhotoUrl };
-                        // axios.post('http://localhost:5000/users', {
+                        // axios.post('https://assignment-12-server-gold.vercel.app/users', {
                         //     savedUser
                         // })
                         //     .then(res => {
@@ -45,7 +45,7 @@ const Signup = () => {
                         //         }
                         //     })
 
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://assignment-12-server-gold.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

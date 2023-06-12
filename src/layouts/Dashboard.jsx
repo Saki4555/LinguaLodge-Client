@@ -7,6 +7,7 @@ import StudentSideBar from "../Pages/Dashboard/StudentDashboard/StudentSideBar";
 import InstructorSideBar from "../Pages/Dashboard/InstructorDashboard/InstructorSideBar";
 import useAuth from "../Hooks/useAuth";
 import AdminSideBar from "../Pages/Dashboard/AdminDashboard/AdminSideBar";
+import Footer from "../Pages/Shared/Footer/Footer";
 
 
 const Dashboard = () => {
@@ -19,7 +20,7 @@ const Dashboard = () => {
 
     const navigate = useNavigate();
 
-    if( !user){
+    if (!user) {
         return navigate('/');
     }
 
@@ -28,7 +29,7 @@ const Dashboard = () => {
 
             <NavBar></NavBar>
             <Container>
-                <div className="drawer lg:drawer-open font-kanit pt-[76px]">
+                <div className="drawer lg:drawer-open font-kanit pt-[76px] pb-5">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content bg-[#F9F9F9]">
                         {/* Page content here */}
@@ -61,6 +62,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </Container>
+            <Footer></Footer>
             <Toaster></Toaster>
         </>
     );

@@ -38,7 +38,7 @@ const AddClass = () => {
             
             // console.log(newclass);
 
-            fetch('http://localhost:5000/classes', {
+            fetch('https://assignment-12-server-gold.vercel.app/classes', {
                 method: "POST",
                 headers:{
                     'content-type' : 'application/json'

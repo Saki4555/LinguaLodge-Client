@@ -8,7 +8,7 @@ const useEnrolledClasses = () => {
     const { data: enrolledClasses = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['enrolled', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/enrolled/${user?.email}`);
+            const res = await axios.get(`https://assignment-12-server-gold.vercel.app/enrolled/${user?.email}`);
             return res.data;
         }
     });

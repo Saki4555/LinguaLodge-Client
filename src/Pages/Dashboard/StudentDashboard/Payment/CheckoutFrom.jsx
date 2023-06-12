@@ -20,11 +20,19 @@ const CheckoutFrom = ({ price, id, selectedClassId }) => {
 
     useEffect(() => {
 
-        axios.post('http://localhost:5000/create-payment-intent', { price })
-            .then(res => {
-                // console.log(res.data);
-                setClientSecret(res.data.clientSecret);
-            })
+        fetch('https://assignment-12-server-gold.vercel.app/create-payment-intent', {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({price})
+        })
+        .then(res=>res.json())
+        .then(data=>{
+           
+            
+             setClientSecret(data.clientSecret)
+        })
 
     }, [price]);
     const handleSubmit = async (event) => {
@@ -88,7 +96,7 @@ const CheckoutFrom = ({ price, id, selectedClassId }) => {
                 
             }
 
-            axios.post('http://localhost:5000/payments', payment)
+            axios.post('https://assignment-12-server-gold.vercel.app/payments', payment)
             .then(res => {
                 const posted = res.data;
                 console.log(posted);

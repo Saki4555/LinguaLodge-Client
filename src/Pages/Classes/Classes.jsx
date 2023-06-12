@@ -21,8 +21,10 @@ const Classes = () => {
 
             </div>
 
-
-            <div className='grid md:grid-cols-3 lg:grid-cols-4 gap-9'>
+            <div className="font-kanit mt-20 mb-14">
+                <h2 className="text-4xl text-center">Our Classes</h2>
+            </div>
+            <div className='grid md:grid-cols-3 lg:grid-cols-4 gap-9 pb-16'>
                 {
                     classes.map(item => <ClassCard
                         key={item._id}
