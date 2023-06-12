@@ -117,6 +117,7 @@ const MangeClasses = () => {
                             </td>
                             <td className="text-center">
                                 <button className="btn btn-outline btn-info text-xs">Send Feedback</button>
+                               
                             </td>
                         </tr>)
                     }

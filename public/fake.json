@@ -1,112 +1,57 @@
 [
     {
-        "name": "Beginner Spanish",
-        "image": "https://i.ibb.co/PwG40NB/spanish.png",
-        "rating": 4.5,
-        "instructor_name": "Maria Lopez",
-        "instructor_email": "maria@example.com",
-        "seat": 30,
-        "price": 29.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Maria Lopez",
+        "email": "maria@lodge.com",
+        "image": "https://i.ibb.co/W0DfK5w/instructor1.jpg"
     },
     {
-        "name": "Intermediate French",
-        "image": "https://i.ibb.co/wJHgGp5/french.png",
-        "rating": 4.2,
-        "instructor_name": "Jean Baptiste",
-        "instructor_email": "jean@example.com",
-        "seat": 25,
-        "price": 39.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Jean Baptiste",
+        "email": "jean@lodge.com",
+        "image": "https://i.ibb.co/GQXGBKX/instructor2.jpg"
     },
     {
-        "name": "Advanced German",
-        "image": "https://i.ibb.co/ftpv7Mv/german.png",
-        "rating": 4.8,
-        "instructor_name": "Hans Müller",
-        "instructor_email": "hans@example.com",
-        "seat": 20,
-        "price": 49.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Sophia Garcia",
+        "email": "sophia@lodge.com",
+        "image": "https://i.ibb.co/W0DfK5w/instructor1.jpg"
     },
     {
-        "name": "Beginner Italian",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.3,
-        "instructor_name": "Giulia Rossi",
-        "instructor_email": "giulia@example.com",
-        "seat": 35,
-        "price": 34.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Giulia Rossi",
+        "email": "giulia@lodge.com",
+        "image": "https://i.ibb.co/Bn5yTp8/instructor3.jpg"
     },
     {
-        "name": "Business English",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.6,
-        "instructor_name": "John Smith",
-        "instructor_email": "john@example.com",
-        "seat": 15,
-        "price": 59.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Isabella Thompson",
+        "email": "isabella@lodge.com",
+        "image": "https://i.ibb.co/W0DfK5w/instructor1.jpg"
     },
     {
-        "name": "Beginner Mandarin",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.1,
-        "instructor_name": "Li Wei",
-        "instructor_email": "li@example.com",
-        "seat": 40,
-        "price": 24.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Amelia Smith",
+        "email": "amelia@lodge.com",
+        "image": "https://i.ibb.co/68XdMXy/instructor4.jpg"
     },
     {
-        "name": "Intermediate Japanese",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.4,
-        "instructor_name": "Yuki Tanaka",
-        "instructor_email": "yuki@example.com",
-        "seat": 25,
-        "price": 39.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Yuki Tanaka",
+        "email": "yuki@lodge.com",
+        "image": "https://i.ibb.co/Bn5yTp8/instructor3.jpg"
     },
     {
-        "name": "Advanced Portuguese",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.7,
-        "instructor_name": "Ana Silva",
-        "instructor_email": "ana@example.com",
-        "seat": 20,
-        "price": 49.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Ana Silva",
+        "email": "ana@lodge.com",
+        "image": "https://i.ibb.co/68XdMXy/instructor4.jpg"
     },
     {
-        "name": "Beginner Russian",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.2,
-        "instructor_name": "Dmitri Ivanov",
-        "instructor_email": "dmitri@example.com",
-        "seat": 30,
-        "price": 29.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Dmitri Ivanov",
+        "email": "dmitri@lodge.com",
+        "image": "https://i.ibb.co/GQXGBKX/instructor2.jpg"
     },
     {
-        "name": "Intermediate Arabic",
-        "image": "https://i.ibb.co/3hJZ98J/random.jpg",
-        "rating": 4.5,
-        "instructor_name": "Mohammed Ahmed",
-        "instructor_email": "mohammed@example.com",
-        "seat": 35,
-        "price": 34.99,
-        "status": "Approved",
-        "enrolled_student": 0
+        "name": "Emma Davis",
+        "email": "emmad@lodge.com",
+        "image": "https://i.ibb.co/68XdMXy/instructor4.jpg"
+    },
+    {
+        "name": "Charlotte Anderson",
+        "email": "charlotte@lodge.com",
+        "image": "https://i.ibb.co/Bn5yTp8/instructor3.jpg"
     }
 ]

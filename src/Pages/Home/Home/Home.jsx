@@ -6,6 +6,7 @@ import Popularclasses from "../PopularClasses/Popularclasses";
 import HomeBanner from "./HomeBanner";
 import Others from "./Others";
 import { ThemeContext } from "../../../Provider/ThemeProvider";
+import PopularInstructors from "./PopularInstructors";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
                 <Others></Others>
                 <Container>
                     <Popularclasses></Popularclasses>
+                    <PopularInstructors></PopularInstructors>
                     <ExtraSection></ExtraSection>
                 </Container>
             </div>

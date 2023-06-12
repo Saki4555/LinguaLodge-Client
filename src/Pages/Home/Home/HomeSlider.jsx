@@ -14,11 +14,10 @@ const HomeSlider = ({ img }) => {
                     transition={{ type: 'spring', stiffness: 50 }}
                     className="flex flex-col justify-center items-center">
                     <h1
-                        className=" text-center text-5xl text-white font-bold drop-shadow-lg">WELCOME TO
-                        <span className="text-amber-500">KINDACODE.COM</span>
+                        className=" text-center text-4xl text-white font-bold drop-shadow-lg">WELCOME TO
+                        <span className="text-amber-500">LINGUALODGE.COM</span>
                     </h1>
-                    <p className="mt-5 text-center text-lg text-white opacity-70">This webiste is about programming and things like
-                        that</p>
+                    <p className="mt-5 text-center text-lg text-white opacity-70">Unlock the World with Language Learning: Embrace Multicultural Connections and Expand Your Horizons</p>
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
