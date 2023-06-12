@@ -2,13 +2,19 @@ import useAllClasses from "../../../Hooks/useAllClasses";
 import { GridLoader } from "react-spinners";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
 
 
 const MangeClasses = () => {
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const [allclasses, loading, refetch] = useAllClasses();
     // console.log(allclasses);
     const [disableButtons, setDisabledButtons] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedClassId, setSelectedClassId] = useState("");
+    const [selectedClass, setSelectedClass] = useState("");
 
     if (loading) {
         return (
@@ -17,6 +23,23 @@ const MangeClasses = () => {
             </div>
         );
     }
+
+
+    const openModal = (classId, className) => {
+        setIsModalOpen(true);
+        setSelectedClassId(classId);
+        setSelectedClass(className)
+
+    };
+    const closeModal = () => {
+        setSelectedClassId("");
+        setSelectedClass("");
+        setIsModalOpen(false);
+        reset();
+
+    };
+
+
 
     const handleStatus = (item, roleToUpdate) => {
         // console.log(item._id);
@@ -47,6 +70,34 @@ const MangeClasses = () => {
             });
     };
 
+    const onSubmit = data => {
+        console.log(data);
+        setIsModalOpen(false);
+        fetch(`http://localhost:5000/classes/feedback/${data.classId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ feedback: data.feedback })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                   
+                    // refetch();
+                    reset();
+                    toast.success(`Feedback sent successfully for ${selectedClass} class`, {
+                        duration: 3000,
+                        position: "top-right",
+                        style: {
+                            background: "#E3F4F4",
+                            fontWeight: "700",
+                        },
+                    });
+                }
+            });
+
+    };
 
     return (
         <div className="overflow-x-auto pl-7 pt-16 font-kanit">
@@ -116,8 +167,48 @@ const MangeClasses = () => {
                                 </div>
                             </td>
                             <td className="text-center">
-                                <button className="btn btn-outline btn-info text-xs">Send Feedback</button>
-                               
+
+                                <button onClick={()=> openModal(item._id, item.name)} className="btn btn-outline btn-info text-xs">Send Feedback</button>
+                                {isModalOpen && (
+                                    <div className="modal modal-open">
+                                        <div method="dialog" className="modal-box ">
+                                            {/* form submit */}
+                                            <form onSubmit={handleSubmit(onSubmit)}>
+
+                                                <span className="text-lg font-semibold pb-2">{selectedClass}</span><br />
+                                                <textarea {...register('feedback', { required: true })}
+                                                    className="textarea textarea-info w-11/12 mb-2" placeholder="Feedback"></textarea>
+                                                <br />
+                                                {errors.feedback && <span className="text-red-500">Can not send empty feedback</span>}
+                                                <br />
+
+                                                <input
+                                                    {...register('classId')}
+                                                    type="text"
+                                                    placeholder="Type here"
+                                                    className="input input-bordered input-info w-full max-w-xs hidden"
+                                                    defaultValue={selectedClassId} 
+                                                /> <br />
+
+
+                                                <motion.button
+                                                    whileHover={{ scale: 1.1 }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                    className="bg-[#88d5d0] hover:bg-[#b9dbdb] text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                                    type="submit"
+                                                >
+                                                    Send
+                                                </motion.button>
+                                            </form>
+
+                                            <div className="modal-action">
+                                                <button className="btn" onClick={closeModal}>Cancel</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                )}
+
                             </td>
                         </tr>)
                     }
