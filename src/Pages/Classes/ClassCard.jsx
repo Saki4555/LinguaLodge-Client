@@ -51,6 +51,7 @@ const ClassCard = ({ item, }) => {
                         // })
 
                         toast.success('Selected successfully', {
+                            position: 'top-right',
                             duration: 1500,
                             style: {
                                 background: '#E3F4F4',

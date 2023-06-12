@@ -3,7 +3,7 @@ import { AiOutlineMail, AiOutlineMobile } from "react-icons/ai"
 import { CiLocationOn } from "react-icons/ci";
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content mt-10">
+        <footer className="footer p-10 bg-neutral text-neutral-content">
             <div>
             <img src={logo} className="w-20 h-14 object-cover object-center rounded" alt="logo" />
                 <p><span className='font-bold'>LinguaLodge Private Ltd.</span><br />Providing reliable tech since 2023</p>

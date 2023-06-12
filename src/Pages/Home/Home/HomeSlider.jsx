@@ -10,10 +10,11 @@ const HomeSlider = ({ img }) => {
                 }}>
                 <motion.div
                     initial={{ y: -300 }}
-                    animate={{ y: 0}}
-                    transition={{ type: 'spring', stiffness: 50}}
+                    animate={{ y: 0 }}
+                    transition={{ type: 'spring', stiffness: 50 }}
                     className="flex flex-col justify-center items-center">
-                    <h1 className=" text-center text-5xl text-white font-bold drop-shadow-lg">WELCOME TO
+                    <h1
+                        className=" text-center text-5xl text-white font-bold drop-shadow-lg">WELCOME TO
                         <span className="text-amber-500">KINDACODE.COM</span>
                     </h1>
                     <p className="mt-5 text-center text-lg text-white opacity-70">This webiste is about programming and things like

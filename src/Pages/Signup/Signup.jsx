@@ -90,7 +90,7 @@ const Signup = () => {
     }
 
     return (
-        <div className="pt-20 font-kanit">
+        <div className="pt-20 font-kanit pb-10">
             <div className="w-full px-2 lg:p-0 lg:w-96 mx-auto border-4 rounded-lg">
 
                 <SocailLogin></SocailLogin>

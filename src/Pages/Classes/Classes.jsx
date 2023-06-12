@@ -14,11 +14,10 @@ const Classes = () => {
 
     return (
         <Container>
-            <div className='pt-12 mb-6'>
+            <div className='pt-[75px] mb-6'>
                 <LazyLoad>
                     <img className='w-full object-cover object-center' src={classgif} alt="" />
                 </LazyLoad>
-
 
             </div>
 
