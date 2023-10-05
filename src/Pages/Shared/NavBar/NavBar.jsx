@@ -68,7 +68,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <img src={logo} className="w-16 h-12 object-cover object-center rounded" alt="logo" />
-                <Link to='/' className={`btn btn-ghost normal-case text-xl lg:text-2xl ${navColorChange ? "pl-2" : "pl-0"}`}>LinguaLodge</Link>
+                <Link to='/' className={`btn btn-ghost normal-case text-sm lg:text-2xl ${navColorChange ? "pl-2" : "pl-0"}`}>LinguaLodge</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="group menu menu-horizontal px-1">

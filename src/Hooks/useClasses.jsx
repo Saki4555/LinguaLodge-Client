@@ -6,7 +6,7 @@ const useClasses = () => {
 
     const { data: classes = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['classes'],
-        queryFn: async() => {
+        queryFn: async () => {
             const res = await axios.get('https://assignment-12-server-gold.vercel.app/classes');
             return res.data;
         }

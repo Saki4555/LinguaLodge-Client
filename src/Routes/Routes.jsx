@@ -61,8 +61,9 @@ const router = createBrowserRouter([
           element: <EnrolledClasses></EnrolledClasses>
         },
         {
-          path: 'pay',
-          element:<Payment></Payment>
+          path: 'pay/:id',
+          element:<Payment></Payment>,
+          loader: ({ params }) => fetch(`https://assignment-12-server-gold.vercel.app/payselected/${params.id}`)
         },
         {
           path: 'payhistroy',

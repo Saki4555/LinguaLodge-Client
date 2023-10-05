@@ -16,9 +16,13 @@ const Dashboard = () => {
     const [loggedUser] = useUserRole();
     // console.log(loggedUser);
 
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
 
     const navigate = useNavigate();
+
+    if(loading){
+        return;
+    }
 
     if (!user) {
         return navigate('/');
